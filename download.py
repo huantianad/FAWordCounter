@@ -60,4 +60,4 @@ with open("downloads.txt", "a", encoding="utf8") as file:
             file.write(text)
             os.remove('tempdownload.pdf')
         else:
-            print(f"Submission {title} is not a valid .txt file. It will be skipped.")
+            print(f"Submission {title} is not a valid file. It will be skipped.")
