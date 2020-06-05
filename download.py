@@ -1,26 +1,27 @@
 import requests as rq
 import bbcode
-import sys, json, os
+from docx import Document
+import json, os, configparser
 
 # Create BBCode parser
 parser = bbcode.Parser()
 
+# Config Stuff
+config = configparser.ConfigParser()
+config.read('config.ini')
+username = config['Main']['username']
+link = config['Main']['scraper']
 
-# Define a function to acess the api at url and return parsed json.
+# Define a function to access the api at url and return parsed json.
 def get(url):
     object = rq.get(url)
     return json.loads(object.text)
 
-
-# Get username from cmd input, store it in username.
-if len(sys.argv) != 2:
-    raise ValueError('Please provide a username.')
-username = sys.argv[1]
-
-# Get the submissions of the use and store it in gallery.
-gallery = get(f"http://localhost:9292/user/{username}/gallery.json")
+# Get submissions of user and store it in gallery.
+gallery = get(f"http://{link}/user/{username}/gallery.json")
 print(str(len(gallery)) + " submissions found.")
 
+# Remove old downloads.txt
 try:
     os.remove("downloads.txt")
 except:
@@ -31,7 +32,7 @@ with open("downloads.txt", "a", encoding="latin1") as file:
     # Loop through posts in gallery.
     for post in gallery:
         # Find the download link.
-        request = get(f"http://localhost:9292/submission/{post}.json")
+        request = get(f"http://{link}/submission/{post}.json")
         title = request["title"]
         print("Downloading " + title)
         # Check if file is valid text and strip bbcode and save to download.txt, skip it not.
