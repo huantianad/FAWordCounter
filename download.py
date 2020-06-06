@@ -74,5 +74,12 @@ with open("downloads.txt", "a", encoding="utf8") as file:
             file.write(text)
             os.remove('tempdownload.pdf')
 
+        elif request["download"].endswith('.rtf'):
+            print(f"Submission {title} is a .rtf file, which is not currently supported. Will be implemented later.")
+
+        elif request["download"].endswith('.odt'):
+            print(f"Submission {title} is a .rtf file, which is not currently supported. Will be implemented later.")
+
         else:
-            print(f"Submission {title} is not a valid file. It will be skipped.")
+            type = request["download"].split('.')[-1]
+            print(f"Submission {title} is a .{type} file, which is not currently supported. It will be skipped.")
