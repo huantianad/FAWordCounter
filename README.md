@@ -8,7 +8,7 @@ Current supported file types are .txt, .doc, .docx, and .pdf. Other formats will
 # Installation
 1. Clone this repository using `git clone https://github.com/huantianad/FAWordCounter`.
 2. Install requirements using `pip install -r requirements.txt`.
-3. Setup [he scraper](https://github.com/Deer-Spangle/faexport) as indicated in the readme.
+3. Setup [the scraper](https://github.com/Deer-Spangle/faexport) as indicated in the readme.
 4. Edit `config.ini` with the url of the scraper and user that you want to download from.
 
 # Useage
