@@ -1,9 +1,12 @@
+from pdfminer.high_level import extract_text
+from docx import Document
 import requests as rq
 import requests_cache
+import configparser
+import json
+import os
 import bbcode
-from docx import Document
-from pdfminer.high_level import extract_text
-import json, os, configparser
+
 
 # Create BBCode parser
 parser = bbcode.Parser()
@@ -26,7 +29,14 @@ def get(url):
 
 
 # Get submissions of user and store it in gallery
-gallery = get(f"http://{link}/user/{username}/gallery.json")
+page = 1
+gallery = []
+while True:
+    gallerypage = get(f"http://{link}/user/{username}/gallery.json?page={page}")
+    gallery.extend(gallerypage)
+    if not gallerypage:
+        break
+    page += 1
 print(str(len(gallery)) + " submissions found.")
 
 # Remove old downloads.txt
