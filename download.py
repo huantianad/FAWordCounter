@@ -17,20 +17,20 @@ config.read('config.ini')
 username = config['Main']['username']
 link = config['Main']['scraper']
 
+
 # Define a function to access the api at url and return parsed json.
 def get(url):
     object = rq.get(url)
     return json.loads(object.text)
+
 
 # Get submissions of user and store it in gallery.
 gallery = get(f"http://{link}/user/{username}/gallery.json")
 print(str(len(gallery)) + " submissions found.")
 
 # Remove old downloads.txt
-try:
+if os.path.exists("downloads.txt")
     os.remove("downloads.txt")
-except:
-    pass
 
 # Initialize downloads.txt.
 with open("downloads.txt", "a", encoding="utf8") as file:
