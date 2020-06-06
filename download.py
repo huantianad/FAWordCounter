@@ -81,5 +81,5 @@ with open("downloads.txt", "a", encoding="utf8") as file:
             print(f"Submission {title} is a .rtf file, which is not currently supported. Will be implemented later.")
 
         else:
-            type = request["download"].split('.')[-1]
-            print(f"Submission {title} is a .{type} file, which is not currently supported. It will be skipped.")
+            extension = request["download"].split('.')[-1]
+            print(f"Submission {title} is a .{extension} file, which is not currently supported. It will be skipped.")
