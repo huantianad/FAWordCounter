@@ -1,7 +1,7 @@
 # FAWordCounter
 Simple word counter for FA made in Python because I was bored.
 
-Requre's [Deer-Spangle's fork](https://github.com/Deer-Spangle/faexport) of boothale's FA Scarper to actually work because FA doesn't have an API.
+Requres [Deer-Spangle's fork](https://github.com/Deer-Spangle/faexport) of boothale's FA Scarper to actually work because FA doesn't have an API.
 
 Current supported file types are .txt, .doc, .docx, and .pdf. Other formats will be supported soon. Hopefully.
 
