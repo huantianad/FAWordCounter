@@ -5,6 +5,8 @@ Requres [Deer-Spangle's fork](https://github.com/Deer-Spangle/faexport) of booth
 
 Current supported file types are .txt, .doc, .docx, and .pdf. Other formats will be supported soon. Hopefully.
 
+Downloading from users with large galleries will take a while because internet.
+
 # Installation
 1. Clone this repository using `git clone https://github.com/huantianad/FAWordCounter`.
 2. Install requirements using `pip install -r requirements.txt`.
