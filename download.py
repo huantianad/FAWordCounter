@@ -13,9 +13,10 @@ requests_cache.install_cache()
 
 # Config Stuff
 config = configparser.ConfigParser()
-config.read('config.ini')
-username = config['Main']['username']
-link = config['Main']['scraper']
+with open('config.ini') as configfile:
+    config.read('config.ini')
+    username = config['Main']['username']
+    link = config['Main']['scraper']
 
 
 # Define a function to access the api at url and return parsed json.
