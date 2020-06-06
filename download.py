@@ -21,8 +21,8 @@ with open('config.ini') as configfile:
 
 # Define a function to access the api at url and return parsed json
 def get(url):
-    object = rq.get(url)
-    return json.loads(object.text)
+    stuff = rq.get(url)
+    return json.loads(stuff.text)
 
 
 # Get submissions of user and store it in gallery
