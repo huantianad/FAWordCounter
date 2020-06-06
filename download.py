@@ -29,7 +29,7 @@ gallery = get(f"http://{link}/user/{username}/gallery.json")
 print(str(len(gallery)) + " submissions found.")
 
 # Remove old downloads.txt
-if os.path.exists("downloads.txt")
+if os.path.exists("downloads.txt"):
     os.remove("downloads.txt")
 
 # Initialize downloads.txt.
