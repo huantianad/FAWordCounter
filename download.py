@@ -1,4 +1,5 @@
 import requests as rq
+import requests_cache
 import bbcode
 from docx import Document
 from pdfminer.high_level import extract_text
@@ -6,6 +7,9 @@ import json, os, configparser
 
 # Create BBCode parser
 parser = bbcode.Parser()
+
+# Create requests cache
+requests_cache.install_cache()
 
 # Config Stuff
 config = configparser.ConfigParser()
