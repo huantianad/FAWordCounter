@@ -10,7 +10,7 @@ Downloading from users with large galleries will take a while because internet.
 # Installation
 1. Clone this repository using `git clone https://github.com/huantianad/FAWordCounter`.
 2. Install requirements using `pip install -r requirements.txt`.
-xport.spangle.org.uk/3. Setup [the scraper](https://github.com/Deer-Spangle/faexport) as indicated in the readme. Alternatively, you can set the url of the scraper as the official website: fae
+3. Setup [the scraper](https://github.com/Deer-Spangle/faexport) as indicated in the readme. Alternatively, you can set the url of the scraper as the official website: faexport.spangle.org.uk
 4. Edit `config.ini` with the url of the scraper and user that you want to download from.
 
 # Useage
